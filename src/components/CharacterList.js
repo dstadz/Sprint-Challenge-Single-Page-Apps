@@ -11,18 +11,12 @@ export default function CharacterList() {
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, []);
 
-  
-  
-
-  const nums = [...Array(5).keys()];
-
-  const listItems = nums.map((item, index) => {
-    return( <Character key={index} item={item}/> )
-  })
- { return (
+  const amount = 5
+  return (
     <section className="character-list">
-      <h1>TODO: `array.map()` over your state here!</h1>
-      {listItems}
+      {[...Array(amount).keys()].map((i, key) => {
+    return( <Character index={i} key={key} /> )
+  })}
     </section>
- );}
+    );
 }

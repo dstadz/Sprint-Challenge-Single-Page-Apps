@@ -8,6 +8,7 @@ import styled from 'styled-components'
 
 
 export default function CharacterCard(props) {
+
   const [name, setName] = useState('')
   const [image, setImage] = useState('')
 
@@ -15,18 +16,18 @@ export default function CharacterCard(props) {
   useEffect(() => {
     axios.get(`https://rickandmortyapi.com/api/character/`)
     .then( res => {
-      const person = res.data.results[props.item]
-      console.log(person)
-      setName(person.name)
-      
+      const person = res.data.results[props.index]
+      setName(person.name)      
       setImage(person.image)
-      console.log('image=',person.image)
     })
     .catch( err => {
       console.log("Error:", err);
     })
   },[])
   
+  
+  
+  //styles
   const Card = styled.div`
   padding: 10px 10px;
   margin: 5px;
@@ -34,22 +35,27 @@ export default function CharacterCard(props) {
   border-radius: 3px;
   color: white;
   background: green;
-  width: 300px
-  `;  
+  width: 300px`;  
+
   const CardBody = styled.div`
   padding: 6px 10px;
   margin: 5px;
   border: none;
   border-radius: 3px;
   color: white;
-  background: blue;
-  `;
+  background: blue;`;
+  
+  const CardImg = styled.img`
+  top width="300px"
+  margin: 5px;
+  border: none;
+  border-radius: 3px;`;
  
     
   return(
     <div>
     <Card>
-      <CardImg top width="300px" src={image} alt="Card image cap" />
+      <CardImg  src={image} />
       <CardBody>
         <CardTitle>{name}</CardTitle>
       </CardBody>

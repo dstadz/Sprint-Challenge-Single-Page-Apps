@@ -2,7 +2,6 @@ import React , { useState , useEffect } from 'react';
 import axios from 'axios'
 //import reactstrap, { Button } from 'reactstrap';
 import Header from "./components/Header.js";
-import SearchForm from "./components/SearchForm.js";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from './components/CharacterList'
 import {BrowserRouter, Route, Link } from 'react-router-dom'
@@ -14,7 +13,6 @@ export default function App() {
   return (
     <main>
       <Header />
-      <SearchForm />
       
       <BrowserRouter />
         <Link to ='/'>Hello</Link>
