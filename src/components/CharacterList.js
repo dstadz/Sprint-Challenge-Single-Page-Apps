@@ -12,17 +12,17 @@ export default function CharacterList() {
   }, []);
 
   
+  
 
   const nums = [...Array(5).keys()];
 
   const listItems = nums.map((item, index) => {
     return( <Character key={index} item={item}/> )
   })
-  return(listItems)
- {/* return (
+ { return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-      <Character />
+      <h1>TODO: `array.map()` over your state here!</h1>
+      {listItems}
     </section>
- );*/}
+ );}
 }
