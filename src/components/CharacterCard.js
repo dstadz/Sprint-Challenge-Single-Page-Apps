@@ -1,31 +1,11 @@
-import React , { useState , useEffect } from 'react';
-import axios from 'axios'
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
+import React from 'react';
+import { CardTitle } from 'reactstrap';
 import styled from 'styled-components'
 
 
 export default function CharacterCard(props) {
-
-  const [name, setName] = useState('')
-  const [image, setImage] = useState('')
-
-  //collect api data, set state
-  useEffect(() => {
-    axios.get(`https://rickandmortyapi.com/api/character/`)
-    .then( res => {
-      const person = res.data.results[props.index]
-      setName(person.name)      
-      setImage(person.image)
-    })
-    .catch( err => {
-      console.log("Error:", err);
-    })
-  },[])
-  
-  
+  const name = props.name
+  const image = props.image
   
   //styles
   const Card = styled.div`
@@ -58,7 +38,7 @@ export default function CharacterCard(props) {
       <CardImg  src={image} />
       <CardBody>
         <CardTitle>{name}</CardTitle>
-      </CardBody>
+      </CardBody> 
     </Card>
   </div>
   )

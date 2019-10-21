@@ -1,15 +1,13 @@
-import React , { useState , useEffect } from 'react';
-import axios from 'axios'
-//import reactstrap, { Button } from 'reactstrap';
+import React from 'react';
 import Header from "./components/Header.js";
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from './components/CharacterList'
+import SearchForm from "./components/SearchForm";
 import {BrowserRouter, Route, Link } from 'react-router-dom'
 
 
 
 export default function App() {
-  
   return (
     <main>
       <Header />
@@ -19,8 +17,11 @@ export default function App() {
         <Link to ='/CharacterList'>People</Link>
 
         
-        <Route exact path='/' component={WelcomePage} />
-        <Route path='/CharacterList' component={CharacterList} />
+        <Route exact path='/' component={ WelcomePage } />
+        <Route 
+          path='/CharacterList' 
+          component={() => <CharacterList />}
+        />
       <BrowserRouter />
     </main>
   );
