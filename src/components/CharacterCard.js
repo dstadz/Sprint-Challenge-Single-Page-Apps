@@ -35,9 +35,9 @@ export default function CharacterCard(props) {
   return(
     <div>
     <Card>
-      <CardImg  src={image} />
+      <CardImg src={ image } />
       <CardBody>
-        <CardTitle>{name}</CardTitle>
+        <CardTitle>{ name }</CardTitle>
       </CardBody> 
     </Card>
   </div>
